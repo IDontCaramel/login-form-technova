@@ -1,0 +1,16 @@
+﻿<Window x:Class="login_form_technova.InputBox"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:login_form_technova"
+        mc:Ignorable="d"
+        Title="Input Box" Height="150" Width="302">
+    <Grid Background="White">
+        <Label Content="login as admin" HorizontalAlignment="Left" Margin="4,10,0,0" VerticalAlignment="Top" Padding="0"/>
+        <Label Content="password" HorizontalAlignment="Left" Margin="4,30,0,0" VerticalAlignment="Top" Height="19" Padding="0"/>
+        <PasswordBox Name="InputTextBox" Margin="4,49,0,0" VerticalAlignment="Top" Width="280" HorizontalAlignment="Left"/>
+        <Button Content="OK" Click="OKButton_Click" HorizontalAlignment="Left" Margin="4,80,0,0" VerticalAlignment="Top" Width="100"/>
+        <Button Content="Cancel" Click="CancelButton_Click" HorizontalAlignment="Left" Margin="182,80,0,0" VerticalAlignment="Top" Width="100"/>
+    </Grid>
+</Window>

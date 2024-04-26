@@ -1,0 +1,35 @@
+﻿<Window x:Class="login_form_technova.AdminPanel"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="AdminPanel" Height="800" Width="1200">
+    <Window.Background>
+        <LinearGradientBrush EndPoint="3,1">
+            <GradientStop Color="#FF772E76" Offset="0"/>
+            <GradientStop Color="#FF71387E" Offset="0.065"/>
+            <GradientStop Color="#FF694287" Offset="0.144"/>
+            <GradientStop Color="#FF624D91" Offset="0.196"/>
+            <GradientStop Color="#FF5265A5" Offset="0.294"/>
+            <GradientStop Color="#FF4B70AF" Offset="0.35"/>
+            <GradientStop Color="#FF437CB9" Offset="0.42"/>
+            <GradientStop Color="#FF3C87C2" Offset="0.469"/>
+            <GradientStop Color="#FF3591CB" Offset="0.531"/>
+            <GradientStop Color="#FF2F9AD2" Offset="0.602"/>
+            <GradientStop Color="#FF2AA2D9" Offset="0.698"/>
+            <GradientStop Color="#FF25A9DF" Offset="0.778"/>
+            <GradientStop Color="#FF22AEE3" Offset="0.839"/>
+            <GradientStop Color="#FF20B1E6" Offset="0.91"/>
+            <GradientStop Color="#FF1FB2E7" Offset="1"/>
+        </LinearGradientBrush>
+    </Window.Background>
+    <Grid>
+        <DataGrid x:Name="csvData" Margin="10,10,493,392" CellEditEnding="csvData_CellEditEnding"></DataGrid>
+        <TextBox x:Name="TextBox" HorizontalAlignment="Left" Margin="10,412,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="697" Height="335"></TextBox>
+
+        
+
+
+    </Grid>
+</Window>
