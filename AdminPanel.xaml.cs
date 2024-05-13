@@ -8,13 +8,7 @@ using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
-using LiveCharts;
-using LiveCharts.Definitions.Charts;
-using LiveCharts.Wpf;
-using LiveChartsCore.SkiaSharpView.Painting;
-using LiveChartsCore.SkiaSharpView;
-using LiveChartsCore;
-using SkiaSharp;
+
 
 namespace login_form_technova
 {
@@ -22,7 +16,7 @@ namespace login_form_technova
     {
         private string csvPath = System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "opendag_inschrijvingen\\inschijvingen.csv");
         private DataTable dataTable;
-        private SeriesCollection seriesCollection = new SeriesCollection();
+        //private SeriesCollection seriesCollection = new SeriesCollection();
 
 
         public AdminPanel()
@@ -162,9 +156,12 @@ namespace login_form_technova
             int rowIndex = e.Row.GetIndex();
             int colIndex = e.Column.DisplayIndex;
 
-            dataTable.Rows[rowIndex][colIndex] = newValue;
+            if (rowIndex >= 0 && rowIndex < dataTable.Rows.Count)
+            {
+                dataTable.Rows[rowIndex][colIndex] = newValue;
 
-            SaveDataTableToCsv(csvPath, dataTable);
+                SaveDataTableToCsv(csvPath, dataTable);
+            }
         }
 
         private void SaveDataTableToCsv(string filePath, DataTable dataTable)
@@ -180,5 +177,6 @@ namespace login_form_technova
                 }
             }
         }
+
     }
 }

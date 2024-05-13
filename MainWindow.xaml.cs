@@ -190,7 +190,7 @@ namespace login_form_technova
             }
             else
             {
-                label.Foreground = new SolidColorBrush(Colors.Black);
+                label.Foreground = new SolidColorBrush(Colors.White);
                 validInputsCount++;
             }
         }
@@ -203,7 +203,7 @@ namespace login_form_technova
             }
             else
             {
-                label.Foreground = new SolidColorBrush(Colors.Black);
+                label.Foreground = new SolidColorBrush(Colors.White);
                 validInputsCount++;
             }
         }
@@ -309,6 +309,9 @@ namespace login_form_technova
             }
         }
 
-        
+        private void InputName_TextChanged_1(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 }

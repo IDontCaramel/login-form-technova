@@ -26,9 +26,9 @@
     </Window.Background>
     <Grid>
         <DataGrid x:Name="csvData" Margin="10,10,493,392" CellEditEnding="csvData_CellEditEnding"></DataGrid>
-        <TextBox x:Name="TextBox" HorizontalAlignment="Left" Margin="10,412,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="697" Height="335"></TextBox>
+        <TextBox x:Name="TextBox" HorizontalAlignment="Left" Margin="735,34,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="439" Height="335"></TextBox>
 
-        
+
 
 
     </Grid>
