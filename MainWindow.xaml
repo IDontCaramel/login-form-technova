@@ -35,32 +35,26 @@
         <Canvas Grid.Column="1" HorizontalAlignment="Center" Height="645" VerticalAlignment="Center" Width="796">
 
             <Label Content="Inschrijven voor opendag" FontFamily="Segoe UI Semibold" FontSize="48" Height="79" Width="566" Foreground="White" HorizontalAlignment="Left" Canvas.Left="114" VerticalAlignment="Top"/>
-            <TextBox x:Name="InputName" TextWrapping="Wrap" Width="794" RenderTransformOrigin="0.5,0.5" Height="50" FontFamily="Segoe UI Semibold" FontSize="36" Padding="2" TabIndex="1" Cursor="IBeam" HorizontalAlignment="Center" Canvas.Top="160" VerticalAlignment="Top" TextChanged="InputName_TextChanged_1"/>
+            <TextBox x:Name="InputName" TextWrapping="Wrap" Width="794" RenderTransformOrigin="0.5,0.5" Height="50" FontFamily="Segoe UI Semibold" FontSize="30" Padding="2" TabIndex="1" Cursor="IBeam" HorizontalAlignment="Center" Canvas.Top="160" VerticalAlignment="Top"/>
             <ComboBox 
-                x:Name="cbDate" Width="398" Height="50" RenderTransformOrigin="0.5,0.5" FontFamily="Segoe UI Semibold" FontSize="36" Padding="2,2,2,2" SelectionChanged="cbDate_SelectionChanged" SelectedIndex="0" TabIndex="4" Cursor="Hand" HorizontalAlignment="Left" Canvas.Left="397" Canvas.Top="343" VerticalAlignment="Top">
-                <ComboBoxItem Content="kies een datum"/>
-                <ComboBoxItem Content="04/02/24"/>
-                <ComboBoxItem Content="01/03/24"/>
-                <ComboBoxItem Content="14/04/24"/>
+                x:Name="cbDate" Width="398" Height="50" RenderTransformOrigin="0.5,0.5" FontFamily="Segoe UI Semibold" FontSize="30" Padding="2,2,2,2" SelectionChanged="cbDate_SelectionChanged" SelectedIndex="0" TabIndex="4" Cursor="Hand" HorizontalAlignment="Left" Canvas.Left="397" Canvas.Top="343" VerticalAlignment="Top">
+
             </ComboBox>
-            <TextBox x:Name="InputMail" TextWrapping="Wrap" Width="794" RenderTransformOrigin="0.5,0.5" Height="50" FontFamily="Segoe UI Semibold" FontSize="36" Padding="2,2,2,2" TextChanged="InputMail_TextChanged" TabIndex="2" Cursor="IBeam" HorizontalAlignment="Center" Canvas.Top="247" VerticalAlignment="Top"/>
-            <TextBox x:Name="InputPhone" TextWrapping="Wrap" Width="366" RenderTransformOrigin="0.5,0.5" Height="50" FontFamily="Segoe UI Semibold" FontSize="36" Padding="2,2,2,2" LostFocus="InputPhone_lostfocus" PreviewTextInput="InputPhone_PreviewTextInput" TabIndex="3" Cursor="IBeam" HorizontalAlignment="Left" Canvas.Top="350" VerticalAlignment="Top"/>
-            <Label Content="Neem je iemand mee?" RenderTransformOrigin="0.5,0.5" Height="38" Width="258" FontFamily="Segoe UI Semibold" FontSize="24" Padding="1,5,5,5" Foreground="White" HorizontalAlignment="Left" Canvas.Top="429" VerticalAlignment="Top"/>
+            <TextBox x:Name="InputMail" TextWrapping="Wrap" Width="794" RenderTransformOrigin="0.5,0.5" Height="50" FontFamily="Segoe UI Semibold" FontSize="30" Padding="2,2,2,2" TextChanged="InputMail_TextChanged" TabIndex="2" Cursor="IBeam" HorizontalAlignment="Center" Canvas.Top="247" VerticalAlignment="Top"/>
+            <TextBox x:Name="InputPhone" TextWrapping="Wrap" Width="366" RenderTransformOrigin="0.5,0.5" Height="50" FontFamily="Segoe UI Semibold" FontSize="30" Padding="2,2,2,2" LostFocus="InputPhone_lostfocus" PreviewTextInput="InputPhone_PreviewTextInput" TabIndex="3" Cursor="IBeam" HorizontalAlignment="Center" Canvas.Top="343" VerticalAlignment="Top"/>
+            <Label Content="Neem je iemand mee?" RenderTransformOrigin="0.5,0.5" Height="50" Width="312" FontFamily="Segoe UI Semibold" FontSize="30" Padding="1,5,5,5" Foreground="White" HorizontalAlignment="Left" Canvas.Top="416" VerticalAlignment="Top"/>
             <Button x:Name="btnSend" Content="Versturen" Height="78" Width="252" FontFamily="Segoe UI Semibold" FontSize="36" Click="btnSend_Click" Cursor="Hand" HorizontalAlignment="Left" Canvas.Left="271" Canvas.Top="532" VerticalAlignment="Top"/>
-            <Label x:Name="lblName" Content="Voledige Naam" FontFamily="Segoe UI Semibold" Padding="0,0,0,0" Height="28" Width="174" FontSize="22" Foreground="White" HorizontalAlignment="Left" Canvas.Top="132" VerticalAlignment="Top"/>
+            <Label x:Name="lblName" Content="Volledige naam" FontFamily="Segoe UI Semibold" Padding="0,0,0,0" Height="28" Width="174" FontSize="22" Foreground="White" HorizontalAlignment="Left" Canvas.Top="132" VerticalAlignment="Top"/>
             <Label x:Name="lblMail" Content="Email" FontFamily="Segoe UI Semibold" Padding="0,0,0,0" Height="28" Width="66" FontSize="22" Foreground="White" HorizontalAlignment="Left" Canvas.Top="219" VerticalAlignment="Top"/>
-            <Label x:Name="lblPhone" Content="telefoon nummer" FontFamily="Segoe UI Semibold" Padding="0,0,0,0" Height="28" Width="200" FontSize="22" Foreground="White" HorizontalAlignment="Left" Canvas.Top="315" VerticalAlignment="Top"/>
-            <Label x:Name="lblDate" Content="datum" FontFamily="Segoe UI Semibold" Padding="0,0,0,0" Height="28" Width="68" FontSize="22" Foreground="White" HorizontalAlignment="Left" Canvas.Left="397" Canvas.Top="315" VerticalAlignment="Top"/>
-            <RadioButton x:Name="_1extra" Content="1" FontSize="22" Height="46" VerticalContentAlignment="Center" FontFamily="Segoe UI Semibold" Width="30" TabIndex="5" Cursor="Hand" Foreground="White" HorizontalAlignment="Left" Canvas.Left="277" Canvas.Top="429" VerticalAlignment="Top"/>
-            <RadioButton x:Name="_2extra" Content="2" FontSize="22" Height="46" VerticalContentAlignment="Center" FontFamily="Segoe UI Semibold" Width="30" RenderTransformOrigin="-0.44,0.617" TabIndex="5" Cursor="Hand" Foreground="White" HorizontalAlignment="Left" Canvas.Left="326" Canvas.Top="430" VerticalAlignment="Top"/>
+            <Label x:Name="lblPhone" Content="Telefoon Nummer" FontFamily="Segoe UI Semibold" Padding="0,0,0,0" Height="28" Width="200" FontSize="22" Foreground="White" HorizontalAlignment="Center" Canvas.Top="308" VerticalAlignment="Top"/>
+            <Label x:Name="lblDate" Content="Datum" FontFamily="Segoe UI Semibold" Padding="0,0,0,0" Height="28" Width="68" FontSize="22" Foreground="White" HorizontalAlignment="Left" Canvas.Left="397" Canvas.Top="315" VerticalAlignment="Top"/>
+            <RadioButton x:Name="_1extra" Content="1" FontSize="30" Height="46" VerticalContentAlignment="Center" FontFamily="Segoe UI Semibold" Width="43" TabIndex="5" Cursor="Hand" Foreground="White" HorizontalAlignment="Left" Canvas.Left="61" Canvas.Top="469" VerticalAlignment="Top"/>
+            <RadioButton x:Name="_2extra" Content="2" FontSize="30" Height="46" VerticalContentAlignment="Center" FontFamily="Segoe UI Semibold" Width="55" RenderTransformOrigin="-0.44,0.617" TabIndex="5" Cursor="Hand" Foreground="White" HorizontalAlignment="Left" Canvas.Left="117" Canvas.Top="469" VerticalAlignment="Top"/>
             <ComboBox 
-                x:Name="cbOpleiding" Width="398" Height="50" RenderTransformOrigin="0.5,0.5" FontFamily="Segoe UI Semibold" FontSize="36" Padding="2,2,2,2" SelectionChanged="cbOpleiding_SelectionChanged" SelectedIndex="0" TabIndex="7" Cursor="Hand" HorizontalAlignment="Left" Canvas.Left="396" Canvas.Top="430" VerticalAlignment="Top">
-                <ComboBoxItem Content="kies een opleiding"/>
-                <ComboBoxItem Content="Software development"/>
-                <ComboBoxItem Content="ICT"/>
-                <ComboBoxItem Content="it systems and devices "/>
+                x:Name="cbOpleiding" Width="398" Height="50" RenderTransformOrigin="0.5,0.5" FontFamily="Segoe UI Semibold" FontSize="30" Padding="2,2,2,2" SelectionChanged="cbOpleiding_SelectionChanged" SelectedIndex="0" TabIndex="7" Cursor="Hand" HorizontalAlignment="Left" Canvas.Left="396" Canvas.Top="430" VerticalAlignment="Top">
             </ComboBox>
-            <Label x:Name="lblOpleiding" Content="opleiding" FontFamily="Segoe UI Semibold" Padding="0,0,0,0" Height="28" Width="115" FontSize="22" Foreground="White" HorizontalAlignment="Left" Canvas.Left="397" Canvas.Top="402" VerticalAlignment="Top"/>
+            <Label x:Name="lblOpleiding" Content="Opleiding" FontFamily="Segoe UI Semibold" Padding="0,0,0,0" Height="28" Width="115" FontSize="22" Foreground="White" HorizontalAlignment="Left" Canvas.Left="397" Canvas.Top="402" VerticalAlignment="Top"/>
+            <RadioButton x:Name="_0extra" Content="0" FontSize="30" Height="46" VerticalContentAlignment="Center" FontFamily="Segoe UI Semibold" Width="46" TabIndex="5" Cursor="Hand" Foreground="White" Canvas.Left="8" Canvas.Top="469" HorizontalAlignment="Left" VerticalAlignment="Top" IsChecked="True"/>
 
 
         </Canvas>

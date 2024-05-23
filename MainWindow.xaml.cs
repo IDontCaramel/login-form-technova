@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OxyPlot;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -25,21 +26,39 @@ namespace login_form_technova
     {
         public MainWindow()
         {
+
             InitializeComponent();
             txtName = InputName;
             txtPhone = InputPhone;
             txtEmail = InputMail;
 
-
             userDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
             newDirectoryPath = System.IO.Path.Combine(userDirectory, "opendag_inschrijvingen");
-            
+
+            StaticData.Dates.Add("kies een datum");
+            StaticData.Dates.Add("21/03/2024");
+            StaticData.Opleidingen.Add("kies een opleiding");
+            StaticData.Opleidingen.Add("opleiding 1");
+
+            CreateOpleiding();
+            CreateDate();
+            InputPhone.MaxLength = 15;
 
         }
 
 
+
+        public static class StaticData
+        {
+            public static List<string> Dates { get; set; } = new List<string>();
+            public static List<string> Opleidingen { get; set; } = new List<string>();
+        }
+
+        
+
+
         private TextBox txtName;
-        private TextBox txtPhone;
+        public TextBox txtPhone;
         private TextBox txtEmail;   
         private string Chosendate;
         private string ChosenOpleiding;
@@ -47,6 +66,7 @@ namespace login_form_technova
         private string newDirectoryPath;
         private string pwHash = "240be518fabd2724ddb6f04eeb1da5967448d7e831c08c8fa822809f74c720a9";
         private int validInputsCount = 0;
+        
 
         private void InputName_TextChanged(object sender, TextChangedEventArgs e)
         {
@@ -88,10 +108,13 @@ namespace login_form_technova
             {
                 case 10:
                     return Regex.Replace(phoneNumber, @"(\d{2})(\d{4})(\d{4})", "($1)-$2-$3");
+
                 case 9:
                     return Regex.Replace(phoneNumber, @"(\d{3})(\d{3})(\d{3})", "($1)-$2-$3");
                 case 11:
-                    return Regex.Replace(phoneNumber, @"(\d{3})(\d{4})(\d{4})", "($1)-$2-$3");
+                    return Regex.Replace(phoneNumber, @"(\d{3})(\d{4})(\d{4})", "+($1)-$2-$3");
+                case 12:
+                    return Regex.Replace(phoneNumber, @"(\d{4})(\d{4})(\d{4})", "($1)-$2-$3");
                 default:
                     return phoneNumber;
             }
@@ -147,13 +170,14 @@ namespace login_form_technova
             if (CheckInputs() == true)
             {
                 SaveResults();
-                MessageBox.Show("succes");
+                InputName.Text = "";
+                InputPhone.Text = "";
+                InputMail.Text = "";
+                cbDate.SelectedIndex = 0;
+                cbOpleiding.SelectedIndex = 0;
 
             }
-            else
-            {
-                MessageBox.Show("ful al de velden in");
-            }
+          
 
         }
 
@@ -278,9 +302,10 @@ namespace login_form_technova
             if (result == true)
             {
                 string userInput = inputBox.UserInput;
-                if (Hash(userInput) == true) 
+                if (Hash(userInput) == pwHash)
                 {
                     AdminPanel adminPanel = new AdminPanel();
+                    adminPanel.Closed += AdminPanel_Closed; // Attach event handler here
                     adminPanel.Show();
                 }
                 else
@@ -290,7 +315,17 @@ namespace login_form_technova
             }
         }
 
-        private bool Hash(string hash)
+        private void AdminPanel_Closed(object sender, EventArgs e)
+        {
+            cbDate.Items.Clear();
+            cbOpleiding.Items.Clear();
+
+            CreateOpleiding();
+            CreateDate();
+        }
+
+
+        private string Hash(string hash)
         {
             using (SHA256 sha256 = SHA256.Create())
             {
@@ -298,20 +333,57 @@ namespace login_form_technova
 
                 string hashString = BitConverter.ToString(hashBytes).Replace("-", "").ToLower();
 
-                if (hashString == pwHash)
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
+                return hashString;
             }
+
+            
         }
 
-        private void InputName_TextChanged_1(object sender, TextChangedEventArgs e)
+
+        public void CreateDate()
         {
+            string[] array = StaticData.Dates.ToArray();
+            if (cbDate == null)
+            {
+                throw new InvalidOperationException("ComboBox 'cbDate' is not initialized.");
+            }
 
+            if (array == null)
+            {
+                throw new ArgumentNullException(nameof(array), "Input dates array is null.");
+            }
+
+            foreach (string date in array)
+            {
+
+                cbDate.Items.Add(date);
+            }
+            cbDate.SelectedIndex = 0;
         }
+
+        public void CreateOpleiding()
+        {
+            string[] array = StaticData.Opleidingen.ToArray();
+            if (cbDate == null)
+            {
+                throw new InvalidOperationException("ComboBox 'cbDate' is not initialized.");
+            }
+
+            if (array == null)
+            {
+                throw new ArgumentNullException(nameof(array), "Input dates array is null.");
+            }
+
+            foreach (string opleiding in array)
+            {
+
+                cbOpleiding.Items.Add(opleiding);
+            }
+            cbOpleiding.SelectedIndex = 0;
+        }
+
+
+
+
     }
 }
